@@ -1,0 +1,52 @@
+.c-primary__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+
+    font-size: $fs-26 !important;
+    text-transform: uppercase;
+    transition: 0.3s;
+    cursor: pointer;
+
+    h3 {
+        margin: 0 2rem;
+        color: $gray-3;
+
+        @include responsive(768) {
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    @include responsive(768) {
+        font-size: $fs-20 !important;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 3rem;
+    }
+
+    @include responsive(576) {
+        font-size: $fs-18 !important;
+    }
+
+    @include responsive(376) {
+        font-size: $fs-16 !important;
+    }
+}
+.title-active {
+    background: linear-gradient(to right, $orange-1 50% , $orange-3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.c-primary__title--center {
+    justify-content: center !important;
+}
+
+.c-admin-title {
+    text-transform: uppercase;
+    color: $orange-1;
+    font-size: $fs-26;
+    margin-bottom: 1rem;
+}

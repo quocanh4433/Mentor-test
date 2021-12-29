@@ -1,0 +1,34 @@
+body{
+	font-family: 'Raleway', sans-serif;
+	font-size: $fs-16;
+	line-height: 1.5;
+}
+
+.container {
+    max-width: $baseWidth;
+    margin: 0 auto !important;
+    padding: 0 $d-4;
+
+	@include responsive(992) {
+		padding: 0 2.5rem;
+	}
+}
+
+.container2 {
+    max-width: 1060px;
+    margin: 0 auto !important;
+    padding: 0 3rem;
+
+	@include responsive(992) {
+		padding: 0 2.5rem;
+	}
+}
+
+.l-section {
+	padding: 4.5rem 0;
+
+	@include responsive(768) {
+		padding: 3rem 0;
+	}
+}
+

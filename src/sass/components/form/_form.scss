@@ -1,0 +1,470 @@
+/** Custom form login and register */
+/** ------------------------------------- */
+.form {
+    display: flex;
+    align-items: center;
+    &__btnClose {
+        position: fixed;
+        top: 2rem;
+        right: 3rem;
+
+        color: $gray-2 !important;
+        font-size: $fs-28;
+        cursor: pointer;
+    }
+
+    &__bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        width: 50%;
+        height: 100vh;
+
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include responsive(768) {
+            display: none;
+        }
+    }
+
+    &__content {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        transform: translate(-50%, -50%);
+        width: 100%;
+
+        @include responsive(768) {
+            flex-direction: column;
+        }
+
+        &-logo {
+            width: 40%;
+            @include responsive(768) {
+                display: none;
+            }
+        }
+
+        form {
+            width: 40%;
+            @include responsive(768) {
+                width: 60%;
+            }
+
+            @include responsive(576) {
+                width: 90%;
+            }
+
+            h3 {
+                text-transform: uppercase;
+                font-size: $fs-40;
+                font-weight: 500;
+                text-align: center;
+
+                margin-bottom: 2rem;
+                background: linear-gradient(to right, $orange-1, $orange-3 50%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .form__group {
+                margin-bottom: 3.5rem;
+                label {
+                    display: block;
+                    margin-bottom: 2px;
+                    color: $dark;
+                    font-weight:600;
+
+                    span {
+                        color: $orange-1;
+                    }
+                }
+
+                input {
+                    width: 100%;
+                    padding: 1rem;
+
+                    font-size: $fs-16;
+
+                    border-radius: 10px;
+                    outline: none;
+                    border: 2px solid $gray-3;
+                    color: $dark;
+                }
+
+                input:-webkit-autofill,
+                input:-webkit-autofill:hover, 
+                input:-webkit-autofill:focus, 
+                input:-webkit-autofill:active  {
+                    -webkit-box-shadow: 0 0 0 30px white inset !important;
+                }
+
+                /* Errors */
+                p {
+                    color: $orange-1;
+                    font-size: $fs-12;
+                }
+            }
+
+            .form__btnSubmit {
+                text-align: center;
+                button {
+                    padding: 1rem 2rem;
+                    margin-bottom: 1.5rem;
+                    font-size: $fs-14;
+                    border-radius: 10px;
+
+                    @include responsive(768) {
+                        margin-bottom: 2.5rem;
+                    }
+                }
+                p {
+                    color: $gray-3;
+                    a {
+                        color: $orange-1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/** Custom form for admin page */
+/** ------------------------------------- */
+.classInputDefault {
+    border-radius: 5px !important;
+    background-color: transparent !important;
+
+    &:hover {
+        border-color: $orange-3 !important;
+    }
+
+    &:focus {
+        border-color: $orange-3 !important;
+        box-shadow: 0 0 3px $orange-3 !important;
+    }
+}
+
+.form-addfilm {
+    padding: 2rem 0 !important;
+}
+
+.c-form__group {
+    margin-bottom: 1rem;
+
+    /** Custom for antdesign */
+    label {
+        text-transform: uppercase;
+        color: $gray-2;
+    }
+
+    input {
+        @extend .classInputDefault;
+    }
+
+    input#upload-photo {
+        background-color: red !important;
+    }
+
+    input:invalid {
+        border-color: $red;
+    }
+
+    textarea {
+        @extend .classInputDefault;
+        min-height: 10rem;
+    }
+
+    /** For select */
+    .ant-select-selector {
+        border-radius: 5px !important;
+        &:hover {
+            border-color: $orange-3 !important;
+            box-shadow: 0 0 3px $orange-3 !important;
+        }
+        &:focus {
+            border-color: $orange-3 !important;
+            box-shadow: 0 0 3px $orange-3 !important;
+        }
+    }
+
+    .ant-select-open {
+        border: none;
+    }
+
+    /** For normal input */
+    .ant-picker-input {
+        input {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+    }
+
+    .ant-input-affix-wrapper {
+        @extend .classInputDefault;
+
+        &:hover {
+            border-color: $orange-3 !important;
+        }
+    }
+
+    .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
+        border-color: $orange-3 !important;
+    }
+
+    .ant-input-affix-wrapper:focus,
+    .ant-input-affix-wrapper-focused {
+        box-shadow: 0 0 3px $orange-3 !important;
+        border-color: $orange-3 !important;
+    }
+
+    /** For Data picker*/
+    .ant-picker {
+        @extend .classInputDefault;
+    }
+
+    .ant-picker-focused {
+        box-shadow: 0 0 3px $orange-3 !important;
+        border-color: $orange-3;
+    }
+
+    /** For switch */
+    .ant-switch-checked {
+        background-color: $orange-3;
+    }
+
+    /** For input number */
+    .ant-input-number {
+        @extend .classInputDefault;
+    }
+
+    .ant-input-number-focused {
+        box-shadow: 0 0 3px $orange-3 !important;
+        border-color: $orange-3;
+    }
+
+    /** Custom for own scss */
+    .c-form-control {
+        display: flex;
+        align-items: center;
+
+        .inputfile {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .inputfile + label {
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            padding: 3px 6px;
+            font-size: $fs-14;
+            color: $orange-1;
+            background-color: $white;
+            border: 1px solid $orange-1;
+            display: inline-block;
+            cursor: pointer; /* "hand" cursor */
+            text-transform: capitalize;
+        }
+    }
+
+    .img-upload {
+        width: 10rem;
+        height: 12rem;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .error {
+        color: $red;
+        margin: 0;
+    }
+}
+
+/** Custom form general profile page */
+/** ------------------------------------- */
+.c-profile-form {
+    margin-top: 2rem;
+    .c-profile-form__wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .c-profile-form__group {
+            width: 48.5%;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px dotted $orange-3;
+
+            .c-profile-form__inner {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                label {
+                    width: 30%;
+                    text-transform: capitalize;
+                    font-size: $fs-12;
+
+                    @include responsive(576) {
+                        display: block;
+                        width: 100%;
+                        margin-bottom: 1rem;
+                    }
+                }
+
+                input {
+                    width: 68%;
+                    padding: 1rem;
+                    border-radius: 8px;
+                    border: 1px solid rgba(239, 239, 239, 0.3);
+
+                    @include responsive(576) {
+                        width: 100%;
+                    }
+                }
+
+                input:disabled {
+                    color: $gray-4;
+                }
+
+                .input-active {
+                    border: 1px solid $orange-3 !important ;
+                    transition: all 0.3s;
+                    &:hover {
+                        box-shadow: 0 0 5px $orange-3 !important;
+                    }
+                    &:focus {
+                        border-color: $orange-3 !important;
+                        box-shadow: 0 0 5px $orange-3 !important;
+                    }
+                }
+
+                @include responsive(576) {
+                    display: block;
+                }
+            }
+
+            @include responsive(576) {
+                width: 100%;
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        @include responsive(576) {
+            display: block;
+        }
+    }
+
+    .c-profile-form__btnsubmit {
+        text-align: right;
+        margin-top: 2rem;
+
+        @include responsive(768) {
+            text-align: center;
+        }
+
+        @include responsive(576) {
+            margin-top: 3rem;
+            text-align: center;
+        }
+    }
+
+    .c-profile-form__error {
+        margin-top: 5px;
+        color: $red;
+        font-size: $fs-12;
+    }
+}
+
+/** Custom form chane password page */
+/** ------------------------------------- */
+
+.c-changepass-form {
+    margin-top: 2rem;
+
+    form {
+        width: 60%;
+        margin: 0 auto;
+        .c-changepass-form__group {
+            margin-bottom: 2rem;
+            label {
+                font-size: $fs-14;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .c-changepass-form-input {
+                padding: 6px 1.5rem;
+
+                @extend .classInputDefault;
+            }
+
+            .c-changepass-form-error {
+                color: $red;
+                margin-top: 5px;
+            }
+
+            .ant-input-affix-wrapper:focus,
+            .ant-input-affix-wrapper-focused {
+                box-shadow: 0 0 3px $orange-3 !important;
+                border-color: $orange-3 !important;
+            }
+        }
+
+        .c-changepass-form__btnsubmit {
+            text-align: center;
+            margin: 3rem 0 4rem;
+        }
+
+        @include responsive(576) {
+            width: 80%;
+        }
+
+        @include responsive(376) {
+            width: 100%;
+        }
+    }
+
+    &__notice {
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+
+        p {
+            width: 40%;
+            strong {
+                font-size: $fs-14;
+                color: $orange-1;
+                text-transform: uppercase;
+                margin-right: 5px;
+            }
+
+            span {
+                font-size: $fs-12;
+            }
+
+            @include responsive(576) {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+
+        @include responsive(576) {
+            display: block;
+        }
+    }
+}

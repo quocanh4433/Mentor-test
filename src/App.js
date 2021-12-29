@@ -1,24 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import "./sass/main.scss";
+import Login from './pages/Login';
+import { Router, Switch, Route,  } from 'react-router-dom'
+import { createBrowserHistory } from 'history';
+import Listuser from './pages/Listuser';
+export const history = createBrowserHistory()
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        Mentor test at Cybersoft
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={history}>
+      <Switch>
+        <Route exact path="/" component={Login} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/listuser" component={Listuser} />
+      </Switch>
+    </Router>
   );
 }
 
