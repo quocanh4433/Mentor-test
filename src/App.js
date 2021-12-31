@@ -4,7 +4,8 @@ import "./sass/main.scss";
 import Login from './pages/Login';
 import { Router, Switch, Route,  } from 'react-router-dom'
 import { createBrowserHistory } from 'history';
-import Listuser from './pages/Listuser';
+import ListUser from './pages/ListUser';
+import AddUser from './pages/AddUser';
 export const history = createBrowserHistory()
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={Login} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/listuser" component={Listuser} />
+        <Route exact path="/listuser" component={ListUser} />
+        <Route exact path="/adduser" component={AddUser} />
       </Switch>
     </Router>
   );

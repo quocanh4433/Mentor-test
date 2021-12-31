@@ -1,7 +1,4 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
-import { CloseCircleOutlined } from '@ant-design/icons';
-import { history } from '../App';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { loginAction } from '../redux/actions/QuanLyNguoiDungAction';
