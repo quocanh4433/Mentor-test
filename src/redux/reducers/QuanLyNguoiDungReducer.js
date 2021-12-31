@@ -21,19 +21,8 @@ export const QuanLyNguoiDungReducer = (state = stateDefault, action) => {
             return { ...state }
         } break;
 
-        case COUNT_LIKE: {
-            let index = _.findIndex(state.lstUserComment, user => user.id === action.id)
-            state.lstUserComment[index].like += 1 
-            return {...state}
-        } break;
-
         case GET_ALL_USER: {
             state.arrAllUser = action.arrAllUser
-            return {...state}
-        } break;
-
-        case GET_USER_EDIT: {
-            state.userEdit = action.userEdit
             return {...state}
         } break;
 

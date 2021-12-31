@@ -16,31 +16,6 @@ export class QuanLyNguoiDungService extends baseService {
         }
         return this.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=${GROUPID}`)
     }
-
-    addUser = (userInfo) => {
-        return this.post("/api/QuanLyNguoiDung/ThemNguoiDung", userInfo)
-    }  
-
-    editUser = (account) => {
-        return this.post(`/api/QuanLyNguoiDung/LayThongTinNguoiDung?taiKhoan=${account}`)
-    }  
-
-    updateUser = (account) => {
-        return this.post(`/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung`, account)
-    }
-
-    updateUserNotAdmin = (account) => {
-        return this.put(`/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung`, account)
-    }
-
-
-    deleteUser = (account) => {
-        return this.delete(`/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${account}`)
-    }
-
-    getUserDetail = (account) => {
-        return this.post(`/api/QuanLyNguoiDung/ThongTinTaiKhoan`, account)
-    }
 }
 
 export const quanLyNguoiDungService = new QuanLyNguoiDungService () 

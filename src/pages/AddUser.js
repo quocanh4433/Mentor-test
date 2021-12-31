@@ -9,7 +9,10 @@ import { useDispatch } from 'react-redux'
 import { GROUPID } from '../utils/setting';
 import { Select } from 'antd'
 import { addUserAction } from '../redux/actions/QuanLyNguoiDungAction';
-import * as Yup from "yup"
+import { ArrowLeftOutlined, LogoutOutlined } from "@ant-design/icons";
+import { history } from '../App';
+import { logOut } from '../_core/shared';
+import * as Yup from "yup";
 
 const { Option } = Select;
 
@@ -46,14 +49,24 @@ export default function AddUser() {
     }
 
     return (
-        <div className='container'>
+        <div className='list container'>
+            <div className='logout' onClick={logOut}>
+                <LogoutOutlined />
+            </div>
             <h3 className="c-admin-title">thêm người dùng</h3>
+            <div className="list__inner">
+                 <div className="c-btn-add">
+                     <button onClick={() => {
+                         history.push("/laydanhsachnguoidung")
+                     }}><ArrowLeftOutlined />Danh sách người dùng</button>
+                 </div>
+             </div>
             <Form
                 onSubmitCapture={formik.handleSubmit}
                 labelCol={{span: 4}}
                 wrapperCol={{span: 14}}
                 layout="horizontal"
-                className="form-addfilm"
+                className="form-addfilm container2"
             >
                 <Form.Item className="c-form__group" label="Tài khoản">
                     <Input name="taiKhoan" onChange={formik.handleChange} />
@@ -102,9 +115,9 @@ export default function AddUser() {
                         <p className="error">{formik.errors.maLoaiNguoiDung}</p>
                     ) : null}
                 </Form.Item>
-                <Form.Item className="c-form__group" label="Chức năng">
+                <div className='btn-add'>
                     <button type="submit" className="c-main-btn c-main-btn--paddingsmall" >Thêm Người Dùng</button>
-                </Form.Item>
+                </div>
             </Form>
         </div>
     )

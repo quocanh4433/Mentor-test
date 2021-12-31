@@ -156,6 +156,11 @@
 
 .form-addfilm {
     padding: 2rem 0 !important;
+
+    .btn-add {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .c-form__group {

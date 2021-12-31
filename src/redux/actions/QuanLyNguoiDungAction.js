@@ -41,7 +41,7 @@ export const loginAction = (userInfo) => {
             };
             localStorage.setItem(ACCESS_TOKEN, result.data.content.accessToken);
             localStorage.setItem(USER_LOGIN, JSON.stringify(result.data.content));
-            history.push("/listuser")
+            history.push("/laydanhsachnguoidung")
         } catch (error) {
             message.error(error.response?.data.content);
             console.log("Error: ", error.response?.data)
@@ -59,58 +59,3 @@ export const addUserAction = (userInfo) => {
         }
     }
 }
-
-export const editUserAction = (account) => {
-    return async (dispatch) => {
-        try {
-            const result = await quanLyNguoiDungService.editUser(account)
-            dispatch({
-                type: GET_USER_EDIT,
-                userEdit: result.data.content
-            })
-        } catch (error) {
-            console.log("Error: ", error)
-        }
-    }
-}
-
-export const updateUserAction = (account) => {
-    return async (dispatch) => {
-        try {
-            const result = await quanLyNguoiDungService.updateUser(account)
-            localStorage.setItem(USER_LOGIN, JSON.stringify(result.data.content))
-            success('Tiến hành cập nhật thông tin', 'Cập nhật thông tin hoàn tất')
-        } catch (error) {
-            console.log("Error: ", error)
-        }
-    }
-}
-
-export const updateUserNotAdminAction = (account) => {
-    return async (dispatch) => {
-        try {
-            const result = await quanLyNguoiDungService.updateUserNotAdmin(account)
-            localStorage.setItem(USER_LOGIN, JSON.stringify({...result.data.content, matKhau: null}))
-            success('Tiến hành cập nhật thông tin', 'Cập nhật thông tin hoàn tất')
-        } catch (error) {
-            console.log("Error: ", error)
-        }
-    }
-}
-
-export const deleteUserAction = (account) => {
-    return async (dispatch) => {
-        try {
-            const result = await quanLyNguoiDungService.deleteUser(account)
-            success('Tiến hành xóa người dùng', 'Xóa người dùng hoàn tất')
-            dispatch(getAllUserAction())
-        } catch (error) {
-            console.log("Error: ", error)
-            success('Tiến hành xóa người dùng', error.response?.data.content)
-        }
-    }
-}
-
-
-
-

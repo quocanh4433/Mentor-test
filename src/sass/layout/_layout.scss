@@ -6,7 +6,7 @@ body{
 
 .container {
     max-width: $baseWidth;
-    margin: 0 auto !important;
+    margin: 5rem auto !important;
     padding: 0 $d-4;
 
 	@include responsive(992) {
@@ -23,12 +23,3 @@ body{
 		padding: 0 2.5rem;
 	}
 }
-
-.l-section {
-	padding: 4.5rem 0;
-
-	@include responsive(768) {
-		padding: 3rem 0;
-	}
-}
-

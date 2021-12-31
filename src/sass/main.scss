@@ -1,8 +1,3 @@
-// -------------------------------------
-// SASS
-// -------------------------------------
-
-
 /* Import adstracts */
 @import "./abstracts/mixin";
 @import "./abstracts/variables";
@@ -15,46 +10,9 @@
 
 /* Import components */ 
 @import "./components/button/button";
-@import "./components/review/review";
 @import "./components/form/form";
 @import "./components/title/title";
-@import "./components/doubleline/doubleline";
-@import "./components/multipletabs/multiplaetabs";
 @import "./components/table/table";
-
-
-// -------------------------------------
-// REACT 
-// -------------------------------------
-
-/* Import from  Template React */
-// @import "../templates/AdminTemplate/admintemplate";
-// @import "../templates/ProfileTemplate/profiletemplate";
-
-
-/* Import Layout from  Template React */
-// @import "../templates/HomeTemplate/Layout/Header/header";
-// @import "../templates/HomeTemplate/Layout/Footer/footer";
-// @import "../templates/CheckoutTemplate/HeaderCheckout/headercheckout";
-
-/* Import from Page React */
-// @import "../pages/Home/home";
-// @import "../pages/Detail/detail";
-// @import "../pages/Checkout/checkout";
-// @import "../pages/Admin/Statistics/statistics";
-// @import "../pages/Admin/CreateShowtime/createshowtime";
-// @import "../pages/Profile/BookingHistory/bookinghistory";
-
-
-/* Import from Component React*/
-// @import "../components/Carousel/carousel";
-// @import "../components/ModalTrailer/modaltrailer";
-// @import "../components/BookingTicketBar/bookingticketbar";
-// @import "../components/MultiplerowCarousel/multiplerow";
-// @import "../components/ParallelCarousel/parallelcarousel";
-// @import "../components/Loading/loading";
-// @import "../components/MiniAvartar/miniavatar";
-
 
 
 

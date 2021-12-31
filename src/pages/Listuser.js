@@ -1,10 +1,10 @@
-import React, { Fragment, useEffect } from 'react'
-import { Table, Input, Button, notification } from 'antd';
-import { PlusCircleOutlined, EditOutlined, DeleteOutlined, CloseCircleOutlined } from "@ant-design/icons"
+import React, { useEffect } from 'react'
+import { Table } from 'antd';
+import { PlusCircleOutlined, LogoutOutlined } from "@ant-design/icons"
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom'
 import { history } from '../App'
 import { getAllUserAction } from '../redux/actions/QuanLyNguoiDungAction';
+import { logOut } from '../_core/shared';
 
 export default function ListUser() {
     const { arrAllUser } = useSelector(state => state.QuanLyNguoiDungReducer)
@@ -109,11 +109,14 @@ export default function ListUser() {
  
      return (
          <section className="list container">
+            <div className='logout' onClick={logOut}>
+                <LogoutOutlined />
+            </div>
              <h3 className="c-admin-title">danh sách người dùng</h3>
              <div className="list__inner">
                  <div className="c-btn-add">
                      <button onClick={() => {
-                         history.push("/adduser")
+                         history.push("/themnguoidung")
                      }}><PlusCircleOutlined />Thêm người dùng</button>
                  </div>
              </div>
