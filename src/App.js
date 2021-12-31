@@ -4,8 +4,9 @@ import "./sass/main.scss";
 import Login from './pages/Login';
 import { Router, Switch, Route,  } from 'react-router-dom'
 import { createBrowserHistory } from 'history';
-import ListUser from './pages/ListUser';
 import AddUser from './pages/AddUser';
+import ListUser from './pages/Listuser';
+
 export const history = createBrowserHistory()
 
 function App() {
