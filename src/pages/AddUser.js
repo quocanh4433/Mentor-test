@@ -115,9 +115,9 @@ export default function AddUser() {
                         <p className="error">{formik.errors.maLoaiNguoiDung}</p>
                     ) : null}
                 </Form.Item>
-                <div className='btn-add'>
+                <Form.Item className="c-form__group" label="Chức Năng">
                     <button type="submit" className="c-main-btn c-main-btn--paddingsmall" >Thêm Người Dùng</button>
-                </div>
+                </Form.Item>
             </Form>
         </div>
     )

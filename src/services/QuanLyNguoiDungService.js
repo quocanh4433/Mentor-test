@@ -16,6 +16,10 @@ export class QuanLyNguoiDungService extends baseService {
         }
         return this.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=${GROUPID}`)
     }
+
+    addUser = (userInfo) => {
+        return this.post("/api/QuanLyNguoiDung/ThemNguoiDung", userInfo)
+    }  
 }
 
 export const quanLyNguoiDungService = new QuanLyNguoiDungService () 
