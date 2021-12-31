@@ -1,4 +1,3 @@
-import './App.css';
 import "./sass/main.scss";
 import Login from './pages/Login';
 import { Router, Switch, Route,  } from 'react-router-dom'
